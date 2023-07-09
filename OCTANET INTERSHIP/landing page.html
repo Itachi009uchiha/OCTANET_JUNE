@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<script>
+     cloud1 = window.document.getElementById("cloud1");
+     window.addEventListener('scroll', function() {
+          let scroll = window.scrollY;
+          window.document.getElementById("hill4").style.left = -scroll * .5 + 'px';
+          window.document.getElementById("hill5").style.left = scroll * .5 + 'px';
+          window.document.getElementById("leaf").style.top = -scroll * .5 + 'px';
+          window.document.getElementById("leaf").style.right = -scroll * .5 + 'px';
+          window.document.getElementById("hill1").style.top = scroll * .5 + 'px';
+          window.document.getElementById("text").style.top = 800 - scroll * 1.5 + 'px';
+
+          window.document.getElementById("bird1").style.right = 900 - scroll * 2.5 + 'px';
+          window.document.getElementById("bird1").style.top = 350 - scroll * 1.5 + 'px';
+
+          window.document.getElementById("bird2").style.right = 900 - scroll * 2.5 + 'px';
+
+          window.document.getElementById("moon").style.top = 288 - scroll * 2.5 + 'px';
+     })
+
+     light = "white"
+     function toggle() {
+          if (light == "white") {
+               light = "dark";
+               document.getElementById("toggle").style.transform = "translateX(40px)";
+               window.document.getElementById("moon").style.display = 'block';
+               document.getElementById("text").style.color = "black";
+               document.getElementById("Logo").style.color = "white";
+               window.document.getElementById("NighEffect").style.display = 'block';
+               window.document.getElementById("stars").style.display = 'block';
+               window.document.getElementById("ToggleBox").style.borderColor = 'white';
+               window.document.getElementById("sun").style.display = 'none';
+          } else if (light = "dark") {
+               light = "white";
+               window.document.getElementById("moon").style.display = 'none';
+               document.getElementById("toggle").style.transform = "translateX(0px)";
+               document.getElementById("text").style.color = "white";
+               document.getElementById("Logo").style.color = "black";
+               window.document.getElementById("NighEffect").style.display = 'none';
+               window.document.getElementById("ToggleBox").style.borderColor = 'black';
+               window.document.getElementById("sun").style.display = 'block';
+          }
+
+     }
+</script>
+
+<body class="overflow-x-hidde">
+     <div class="">
+          <div class="w-full h-fit flex pl-10 mt-2 absolute top-0 z-[60]">
+               <div class="font-semibold text-4xl" id="Logo">PokeWorld</div>
+               <div class="space-x-10 flex pl-[550px] my-auto">
+                    <div class="rounded-full bg-teal-700 text-white font-semibold text-lg px-3 py-1 w-fit h-fit ">Home
+                    </div>
+                    <div class="rounded-full bg-teal-700 text-white font-semibold text-lg px-3 py-1 w-fit h-fit ">service
+                    </div>
+                    <div class="rounded-full bg-teal-700 text-white font-semibold text-lg px-3 py-1 w-fit h-fit ">feedback
+                    </div>
+                    <div class="rounded-full bg-teal-700 text-white font-semibold text-lg px-3 py-1 w-fit h-fit ">contact
+                    </div>
+                    <div class="w-fit h-fit border-2 pr-10 rounded-full py-[1px] flex place-content-center items-center my-auto border-black" id="ToggleBox">
+                         <div class="border-2 bg-teal-900 rounded-full h-6 w-6 z-[100] mx-[1px] my-[1px] border-white" onclick="toggle();" id="toggle"></div>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class=" relative h-screen overflow-hidden">
+
+          <div class="absolute -z-[200] bg-black h-screen w-screen hidden" id="NighEffect"></div>
+
+          <div class="w-56 h-56 rounded-full bg-yellow-500 shadow-[0px_0px_40px_black] shadow-teal-500 absolute left-[42%] top-72 blur-xl -z-[50]" id="sun"></div>
+
+          <div class="w-56 h-56 hidden absolute left-[42%] top-72 -z-[60]" id="moon">
+               <img src="assets/assets1/moon.svg" alt="">
+          </div>
+
+
+          <div><img src="assets/assets1/leaf.png" alt="" class="absolute top-0 right-0 z-50 pointer-events-none" id="leaf"></div>
+
+          <div>
+               <lottie-player src="https://assets5assets1/.lottiefiles.com/packages/lf20_vVBI5XoNPI.json" background="transparent" speed="1" class="w-10 h-10 -z-[48] absolute top-[250px] right-[850px]" id="bird1" loop autoplay></lottie-player>
+          </div>
+
+          <div>
+               <lottie-player src="https://assets5assets1/.lottiefiles.com/packages/lf20_vVBI5XoNPI.json" background="transparent" speed="1" class="w-10 h-10 -z-[48] absolute top-[310px] right-[840px]" id="bird2" loop autoplay></lottie-player>
+          </div>
+
+          <div><img src="assets/assets1/hill1.png" alt="" class="absolute top-0 w-screen z-30 pointer-events-none" id="hill1"></div>
+          <div><img src="assets/assets1/hill2.png" alt="" class="absolute top-0 w-screen z-30 pointer-events-none " id="hill2"></div>
+          <div><img src="assets/assets1/hill3.png" alt="" class="absolute bottom-0 left-0 w-screen z-40 pointer-events-none" id="hill3"></div>
+          <div><img src="assets/assets1/hill4.png" alt="" class="absolute bottom-0 left-0 w-screen z-40 pointer-events-none" id="hill4"></div>
+          <div><img src="assets/assets1/hill5.png" alt="" class="absolute bottom-0 right-0 w-screen z-40 pointer-events-none" id="hill5"></div>
+
+          <div class="uppercase font-bold text-8xl text-white tracking-wider absolute left-1/4 top-[100px] z-[42] pointer-events-none" id="text">POKEMON</div>
+
+          <div><img src="assets/assets1/tree.png" alt="" class="absolute bottom-0 right-0 w-screen z-40 pointer-events-none" id="tree"></div>
+
+          <div><img src="assets/assets1/plant.png" alt="" class="absolute bottom-0 left-0 w-screen z-[45] pointer-events-none" id="plant"></div>
+     </div>
+
+     <div class="p-3">
+          <div class="font-bold text-4xl tracking-wide">POKEMON</div>
+          <div class="text-base"></div>
+     </div>
+
+     <div id="div1">
+          <p id="p1">Pokémon, 20th- and 21st-century Japanese fantasy-based cartoon creatures that spawned a video- and card-game franchise. In the Pokémon—or “Pocket Monsters”—video-game series, players were able to explore the game's fictional world by looking for wild Pokémon creatures to capture and tame.</p>
+          <p id="p2">Charmander,squirtle,bulbasaur</p>
+     </div>
+     <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+              <div class="p-4 md:w-1/3">
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                  <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="pokemon 1.jpg" alt="blog">
+                  <div class="p-6">
+                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">PLAYING CARDS</h2>
+                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">THE OG's</h1>
+                    <p class="leading-relaxed mb-3"></p>
+                    <div class="flex items-center flex-wrap ">
+                      <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 md:w-1/3">
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                  <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="pokemon 2.jpg" alt="blog">
+                  <div class="p-6">
+                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">LEGENDARY</h2>
+                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Eating with God's</h1>
+                    <div class="flex items-center flex-wrap">
+                      <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 md:w-1/3">
+                <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                  <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="pokemon 3.jpg" alt="blog">
+                  <div class="p-6">
+                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">OG TRIO</h2>
+                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Green Land</h1>
+                    <div class="flex items-center flex-wrap ">
+                      <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                        <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M5 12h14"></path>
+                          <path d="M12 5l7 7-7 7"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+     <footer  class="text-gray-600 body-font absolute bottom-0-0 right-0 min-w-full bg-slate-200">
+          <div class="container px-5 py-24 mx-auto">
+               <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+                    <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                         <nav class="list-none mb-10">
+                              <ul>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                   </li>
+                              </ul>
+                         </nav>
+                    </div>
+                    <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                         <nav class="list-none mb-10">
+                              <ul>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                   </li>
+                              </ul>
+                         </nav>
+                    </div>
+                    <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                         <nav class="list-none mb-10">
+                              <ul>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                   </li>
+                              </ul>
+                         </nav>
+                    </div>
+                    <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                         <nav class="list-none mb-10">
+                              <ul>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                   </li>
+                              </ul>
+                         </nav>
+                    </div>
+                    <div class="lg:w-1/6 md:w-1/2 w-full px-4">
+                         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                         <nav class="list-none mb-10">
+                              <ul>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                                   </li>
+                                   <li>
+                                        <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                                   </li>
+                              </ul>
+                         </nav>
+                    </div>
+               </div>
+          </div>
+          <div class="border-t border-gray-200">
+               <div class="container px-5 py-8 flex flex-wrap mx-auto items-center">
+                    <div class="flex md:flex-nowrap flex-wrap justify-center items-end md:justify-start">
+                         <div class="relative sm:w-64 w-40 sm:mr-4 mr-2">
+                              <label for="footer-field" class="leading-7 text-sm text-gray-600">Placeholder</label>
+                              <input type="text" id="footer-field" name="footer-field"
+                                   class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                         </div>
+                         <button
+                              class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Button</button>
+                         <p class="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">Bitters
+                              chicharrones fanny pack
+                              <br class="lg:block hidden">waistcoat green juice
+                         </p>
+                    </div>
+                    <span class="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">
+                         <a class="text-gray-500">
+                              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                   class="w-5 h-5" viewBox="0 0 24 24">
+                                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                              </svg>
+                         </a>
+                         <a class="ml-3 text-gray-500">
+                              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                   class="w-5 h-5" viewBox="0 0 24 24">
+                                   <path
+                                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                                   </path>
+                              </svg>
+                         </a>
+                         <a class="ml-3 text-gray-500">
+                              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                   stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                              </svg>
+                         </a>
+                         <a class="ml-3 text-gray-500">
+                              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                   stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                                   <path stroke="none"
+                                        d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                                   </path>
+                                   <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                              </svg>
+                         </a>
+                    </span>
+               </div>
+          </div>
+     </footer>
+</body>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+
+</html>
